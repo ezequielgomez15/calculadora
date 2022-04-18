@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="https://images.vexels.com/media/users/3/139836/isolated/lists/cbb25ff6f1471030763f0709c87e276a-icono-de-calculadora.png" type="image/x-icon">
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            background-color: darkgray;
+        }
+
+        #container{
+            height: 420px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid black;
+            margin: 0;
+        }
+
+        #container form{
+            height: 100%;
+            width: 100%;
+            background-color: black;
+        }
+
+        #container input[type=textfield]{
+            width: 100%;
+            height: 25%;
+            cursor: default;
+            font-family: 'Roboto', sans-serif;
+            color: white;
+            background-color: black;
+            text-align: right;
+            padding: 15px;
+            font-size: 50px;
+            border: 0;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        #container input[type=button], input[type=reset]{
+            width: 22%;
+            cursor: pointer;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            color: black;
+            font-size: 26px;
+            padding: 18px;
+            margin: 2px;
+            border: 0;
+            border-radius: 100%;
+        }
+
+        .orange{
+            background-color: rgb(253, 149, 3);
+            color: white !important;
+        }
+
+        .gray{
+            background-color: rgb(51, 51, 51);
+            color: white !important;
+        }
+    </style>
+    <title>Calculadora</title>
+</head>
+<body>
+    <div id="container">
+        <form name="calculadora">
+            <input type="textfield" name="res" value="" autocomplete="off" readonly>
+
+            <input type="button" value="7" onclick="document.calculadora.res.value+=7" class="gray">
+            <input type="button" value="8" onclick="document.calculadora.res.value+=8" class="gray">
+            <input type="button" value="9" onclick="document.calculadora.res.value+=9" class="gray">
+            <input type="button" value="+" onclick="document.calculadora.res.value+='+'" class="orange">
+            <br>
+            <input type="button" value="4" onclick="document.calculadora.res.value+=4" class="gray">
+            <input type="button" value="5" onclick="document.calculadora.res.value+=5" class="gray">
+            <input type="button" value="6" onclick="document.calculadora.res.value+=6" class="gray">
+            <input type="button" value="-" onclick="document.calculadora.res.value+='-'" class="orange">
+            <br>
+            <input type="button" value="1" onclick="document.calculadora.res.value+=1" class="gray">
+            <input type="button" value="2" onclick="document.calculadora.res.value+=2" class="gray">
+            <input type="button" value="3" onclick="document.calculadora.res.value+=3" class="gray">
+            <input type="button" value="X" onclick="document.calculadora.res.value+='*'" class="orange">
+            <br>
+            <input type="button" value="0" onclick="document.calculadora.res.value+=0" class="gray"> 
+            <input type="reset" value="C">
+            <input type="button" value="=" onclick="document.calculadora.res.value=eval(document.calculadora.res.value)">
+            <input type="button" value="/"onclick="document.calculadora.res.value+='/'" class="orange">
+        </form>
+    </div>
+</body>
+</html>
